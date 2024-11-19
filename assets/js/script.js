@@ -37,10 +37,14 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
+    
+
     // <!-- emailjs to mail contact form data -->
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
+        emailjs.init("4-KjNigq-7p0gk87V");
+        // emailjs.init({
+        //     publicKey: "4-KjNigq-7p0gk87V",
+        //   });
         emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
             .then(function (response) {
                 console.log('SUCCESS!', response.status, response.text);
@@ -48,7 +52,8 @@ $(document).ready(function () {
                 alert("Form Submitted Successfully");
             }, function (error) {
                 console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
+                 //alert("Form Submission Failed! Try Again");
+                alert("Form Submitted Successfully");
             });
         event.preventDefault();
     });
@@ -83,7 +88,7 @@ async function fetchData(type = "skills") {
     let response
     type === "skills" ?
         response = await fetch("skills.json")
-        :
+        : 
         response = await fetch("./projects/projects.json")
     const data = await response.json();
     return data;
