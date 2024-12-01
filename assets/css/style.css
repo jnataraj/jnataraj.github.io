@@ -621,7 +621,8 @@ header .navbar ul li a:hover {
     height: 25rem;
   }
   .education .box-container .box img {
-    width: 100%;
+    /* width: 100%; */
+    width: 50%;
   }
   .education .box-container .box .content {
     position: relative;
